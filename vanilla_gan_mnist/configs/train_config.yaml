@@ -1,0 +1,33 @@
+mode: 'train' # possible modes: 'train' or 'test'
+general:
+  batch_size: 128
+  n_batches: 200000
+  discriminator_steps_per_batch: 1
+  generator_steps_per_batch: 1
+  n_dataloader_workers: 0
+  dataset_path: '../mnist'
+
+initialization:
+  discriminator: null # path to discriminator's .pt checkpoint or null
+  generator: null # path to generator's .pt checkpoint or null
+
+optimizers:
+  discriminator:
+    lr: 0.0001
+  generator:
+    lr: 0.0001
+
+logging:
+  log_freq: 10 # log metrics after each n batches
+  sample_freq: 50 # log generator samples after each m batches
+  n_samples: 16
+  sample_shape:
+    channels: 1
+    width: 28
+    height: 28
+
+checkpoints:
+  base_path: './checkpoints'
+  discriminator_path: 'discriminator'
+  generator_path: 'generator'
+  frequency: 20000 # each n batches

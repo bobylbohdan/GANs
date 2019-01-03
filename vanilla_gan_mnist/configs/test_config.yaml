@@ -1,0 +1,8 @@
+mode: 'test' # possible modes: 'train' or 'test'
+samples_save_to: 'sample_dir'
+n_samples: 10000
+sample_shape:
+  channels: 1
+  width: 28
+  height: 28
+generator_checkpoint: '/home/bohdanbobyl/vanilla_gan_mnist/checkpoints/generator/batch_40000.pt'
